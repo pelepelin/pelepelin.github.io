@@ -10,3 +10,5 @@ I often install new Linux virtual machines where I'm the only interactive user a
   ```
   %sudo   ALL=(ALL:ALL) NOPASSWD: ALL
   ```
+
+**Update**: In Ubuntu 20.04, installer created a file in `/etc/sudoers.d/` which overrode the setting in `sudoers`. I removed it.
