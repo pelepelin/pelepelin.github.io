@@ -4,6 +4,6 @@ title: About
 permalink: /about/
 ---
 
-Web Developer at Electronic Arts.
+Web Developer at Sperasoft.
 
 _Jack of all trades._
