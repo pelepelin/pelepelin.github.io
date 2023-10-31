@@ -3,6 +3,9 @@ layout: post
 title: Alpine on a router
 ---
 
+In this article I'll show simple steps to install Alpine in a chroot environment
+on a SOHO router.
+
 ## Motivation
 
 Nowadays many SOHO routers are quite powerful devices. Probably, not as powerful
@@ -41,6 +44,8 @@ distribution used for lightweight containers most often, Alpine, also has
 
 ## But why, actually?
 
+- There's enough spare power on the router to run some services 24x7 and I don't
+need an additional box for that.
 - Current Entware repository for ARM x64 architecture
 [contains about 2800 packages](https://bin.entware.net/aarch64-k3.10/Packages.html).
 Alpine contains more than 5000 packages in its "stable" repo and 14000 in
