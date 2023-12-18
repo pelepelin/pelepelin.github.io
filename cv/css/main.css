@@ -1,0 +1,309 @@
+html {
+  color: #000;
+  font-size: 1em;
+  line-height: 1.2;
+}
+
+body {
+  margin: 0.5em 1em;
+}
+
+@counter-style triangle {
+  system: cyclic;
+  symbols: ‣;
+  suffix: " ";
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 2em;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header .position {
+  display: inline;
+  background-color: #def;
+  font-size: 1.5em;
+  border-radius: 0.4em;
+  padding: 0 0.2em;
+}
+
+section.links {
+  font-size: 2em;
+}
+section.links h2 {
+  display: none;
+}
+section.links ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+section.links li {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+section.links a {
+  text-decoration: none;
+}
+
+section.links a img {
+  width: 0.6em;
+  height: 0.6em;
+  border: 0;
+}
+
+h2 {
+  /*
+  text-transform: uppercase;
+  */
+  font-size: 1.3em;
+  font-weight: normal;
+  font-style: italic;
+  margin: 0.5em 0 0 0;
+  background: #dfd;
+  border-radius: 0.3em;
+  padding: 0.1em 0.3em;
+}
+
+p {
+  margin: 0.2em 0;
+}
+
+ul.experience {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.5em 0 0 0;
+}
+
+ul.experience > li {
+  margin: 0 0 0.5em 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: 1.4em;
+  font-weight: bold;
+  display: inline;
+  margin: 0;
+}
+
+div.timespan {
+  display: inline;
+  padding-left: 1em;
+  color: #666;
+}
+
+div.timespan::after {
+  content: " ";
+  display: block;
+  height: 0;
+}
+
+ul.experience div.position {
+  color: gray;
+  font-style: italic;
+}
+
+ul.experience div.position span {
+  color: black;
+  font-style: normal;
+}
+
+h4 {
+  margin: 0.1em 0 0 0;
+  font-weight: normal;
+  font-style: italic;
+  color: gray;
+}
+
+@counter-style arrow-right {
+  system: cyclic;
+  symbols: ⇨;
+  suffix: " ";
+}
+
+ul.projects {
+  list-style-type: arrow-right;
+  padding-left: 1.1em;
+}
+
+h5 {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+ul.roles {
+  list-style-type: triangle;
+  padding-left: 0.6em;
+}
+
+ul.skills {
+  margin: 0.3em 0;
+  list-style-type: triangle;
+  padding-left: 0.6em;
+}
+
+ul.skills ul {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.skills ul li {
+  display: inline;
+}
+
+ul.languages {
+  margin: 0.3em 0;
+  padding-left: 1em;
+}
+
+section.edu .inst {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+section.edu time {
+  color: #666;
+}
+
+@media screen and (min-width: 50em) {
+  main section {
+    display: grid;
+    grid-template-columns: 10em auto;
+  }
+
+  main section > p {
+    margin: 1em 0 0 1em;
+  }
+  main section > ul.experience {
+    margin: 0.65em 0 0 1em;
+  }
+  main section > div.skills {
+    margin: 0.6em 0 0 1em;
+  }
+  main section.edu > div.edu {
+    margin: 0.8em 0 0 1em;
+  }
+}
+
+@media screen and (min-width: 70em) {
+  body {
+    width: 67em;
+    margin: 0.5em auto;
+  }
+}
+
+.print {
+  display: none;
+}
+
+@media print {
+  .print {
+    display: inline;
+  }
+
+  html, body {
+    font-size: 12pt;
+  }
+
+  header {
+    display: block
+  }
+
+  *,
+  *::before,
+  *::after {
+    /*background: #fff !important;*/
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  .header-flex {
+    display: block;
+  }
+
+  section.links {
+    font-size: 1em;
+    margin-top: 0.5em;
+  }
+  section.links ul {
+    list-style-type: triangle;
+    padding: 0 1em;
+    font-size: 0.8em;
+  }
+  section.links li {
+    margin: 0;
+    padding: 0;
+    display: list-item;
+  }
+
+  section.links a img {
+    display: none;
+  }
+}
